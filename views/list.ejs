@@ -1,0 +1,29 @@
+<%- include("header"); -%>
+
+
+    <!-- a sample of running code in ejs templsate -->
+  <!-- <%  if (listTitle === "saturday" || listTitle === "sunday"){ %>
+    <h1 style="color:orange;">its <%= listTitle %>! </h1>
+    <% }else {%>
+      <h1 style="color:pink;">its <%= listTitle %>! </h1>
+  <%  }  %> -->
+<div class="box" id="heading">
+  <h1> <%= listTitle %></h1>
+</div>
+
+  <div class="box">
+
+    <% for(var i=0; i<newAddedItem.length; i++){ %>
+      <div class="item">
+      <input type="checkbox" >
+    <p> <%= newAddedItem[i] %> </p>
+    </div>
+<%  } %>
+
+
+  <form class="item" action="/" method="post">
+    <input type="text" name="newItem"  placeholder="Enter new items" autocomplete="off">
+    <button type="submit" name="list" value= <%= listTitle %> >+</button>
+  </form>
+</div>
+<%- include("footer"); -%>
